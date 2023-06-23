@@ -42,7 +42,8 @@
   },
   "homepage": "https://github.com/nimiq/qr-scanner#readme",
   "dependencies": {
-    "@types/offscreencanvas": "^2019.6.4"
+    "@types/offscreencanvas": "^2019.6.4",
+    "batch": "^0.6.1"
   },
   "devDependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "^0.27.0",
