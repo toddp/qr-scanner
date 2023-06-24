@@ -627,7 +627,7 @@ class QrScanner {
         // @ts-ignore no types defined for import
         const createWorker = () => (import('./qr-scanner-worker.min.js') as Promise<{ createWorker: () => Worker }>)
             .then((module) => module.createWorker());
-
+        console.log("getSupportedFormats:"  + BarcodeDetector.getSupportedFormats());
         const useBarcodeDetector = !QrScanner._disableBarcodeDetector
             && 'BarcodeDetector' in window
             && BarcodeDetector.getSupportedFormats
@@ -815,7 +815,7 @@ class QrScanner {
             if (timeSinceLastScan < minimumTimeBetweenScans) {
                 await new Promise((resolve) => setTimeout(resolve, minimumTimeBetweenScans - timeSinceLastScan));
             }
-            // console.log('Scan rate:', Math.round(1000 / (Date.now() - this._lastScanTimestamp)));
+            console.log('Scan rate:', Math.round(1000 / (Date.now() - this._lastScanTimestamp)));
             this._lastScanTimestamp = Date.now();
 
             let result: QrScanner.ScanResult | undefined;
