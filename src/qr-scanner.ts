@@ -653,7 +653,7 @@ class QrScanner {
                 .catch(() => true);
         if (isChromiumOnMacWithArmVentura) return createWorker();
 
-        return new BarcodeDetector({ formats: ['qr_code'] });
+        return new BarcodeDetector({ formats: ['code_128','code_39','code_93','codabar','ean_13','ean_8','itf','qr_code','upc_a','upc_e'] });
     }
 
     private _onPlay(): void {
